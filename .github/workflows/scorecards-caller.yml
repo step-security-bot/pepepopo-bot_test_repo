@@ -6,15 +6,13 @@ on:
   schedule:
     - cron: '27 9 * * 6'
 
-permissions: 
-  contents: read
-
 jobs:
   scoreca:
     uses: pepepopo-bot/workflows/.github/workflows/scorecards.yml@main
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
     permissions:
+      contents: read
       security-events: write
       id-token: write
 
